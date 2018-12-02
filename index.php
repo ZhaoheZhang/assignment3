@@ -10,5 +10,8 @@ include 'connectdb.php';
 ?>
 <h1>Welcome to the Sales Information Database</h1>
 <h2>Customer Information</h2>
+<?php
+include 'getdata.php';
+?>
 </body>
 </html>
