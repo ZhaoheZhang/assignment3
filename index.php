@@ -10,8 +10,11 @@ include 'connectdb.php';
 ?>
 <h1>Welcome to the Sales Information Database</h1>
 <h2>Customer Information</h2>
+<form action="gettransactions.php" method="post">
 <?php
 include 'getdata.php';
 ?>
+<input type="submit" value="Get Customer Transactions">
+</form>
 </body>
 </html>
