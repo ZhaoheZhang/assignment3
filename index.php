@@ -16,5 +16,11 @@ include 'getdata.php';
 ?>
 <input type="submit" value="Get Customer Transactions">
 </form>
+<h2>Product Information</h2>
+<form action="getproduct.php" method="post">
+<input type="radio" name="order" value="ascending">In Ascending<br>
+<input type="radio" name="order" value="descending">In Descending<br>
+<input type="submit" value="Get All Product Information">
+</form>
 </body>
 </html>
