@@ -20,7 +20,8 @@
    if (!$result1) {
         die("databases query1 failed.");
     }
-    $stock = mysqli_fetch_assoc($result1);
+    $row1 = mysqli_fetch_assoc($result1);
+    $stock = $row1["quantity"];
     echo $stock;
 
     if($purchasequantity > $stock) {
