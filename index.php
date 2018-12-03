@@ -67,6 +67,14 @@ include 'getphone.php';
 New Phone Number: <input type="text" name="newphone"><br>
 <input type="submit" value="Change Customer Phone Number">
 </form>
+<p>
+<hr>
+<p>
+<form action="deletecustomer.php" method="post" enctype="multipart/form-data">
+<?php
+include 'getdata.php';
+?>
+</form>
 <?php
 mysqli_close($connection);
 ?>
