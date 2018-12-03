@@ -8,7 +8,7 @@
 <?php
 include 'connectdb.php';
 ?>
-<h1>Here is the original Phone Number:</h1>
+<h1>Change Customer Phone Number:</h1>
 <ol>
 <?php
    $whichCustomer= $_POST["customer"];
@@ -18,6 +18,7 @@ include 'connectdb.php';
          die("database query failed.");
      }
     $row=mysqli_fetch_assoc($result);
+    echo "Original Phone Number: "<br>;
     echo $row["firstname"] ." ". $row["lastname"] .": ". $row["phone"];
     mysqli_free_result($result);
 ?>

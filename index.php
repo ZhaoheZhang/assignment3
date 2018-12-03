@@ -63,7 +63,7 @@ City: <input type="text" name="city"><br>
 <?php
 include 'getdata.php';
 ?>
-<input type="submit" value="Get Customer Transactions">
+<input type="submit" value="Change Customer Phone Number">
 </form>
 <?php
 mysqli_close($connection);
