@@ -12,7 +12,7 @@ include 'connectdb.php';
 <ol>
 <?php
    $whichCustomer= $_POST["customer"];
-   $query = 'SELECT * FROM customer, product, deal WHERE customer.customerid = deal.customerid AND product.productid = deal.productid AND customer.customerid = "' . $whichCustomer . '"';
+   $query = 'SELECT * FROM customer, product, deal WHERE customer.customerid = deal.customerid AND product.productid = deal.productid AND customer.customerid = "31";
    $result=mysqli_query($connection,$query);
     if (!$result) {
          die("database query2 failed.");
