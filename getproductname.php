@@ -8,7 +8,7 @@
    while ($row = mysqli_fetch_assoc($result)) {
         echo '<input type="radio" name="product" value="';
         echo $row["productid"];
-        echo '">' . $row["description"] . " " . $row["cost"] . "<br>";
+        echo '">' . $row["description"] . " quantity: " . $row["quantity"] . "<br>";
    }
    mysqli_free_result($result);
 ?>
