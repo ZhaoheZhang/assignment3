@@ -12,7 +12,7 @@ include 'connectdb.php';
 <ol>
 <?php
    $quantity= $_POST["quantity"];
-   $query = 'SELECT * FROM customer, product, deal WHERE customer.customerid=deal.customerid AND product.productid=deal.productid AND deal.quantity >"'.$quantity.'" ORDER BY deal.quantity';
+   $query = 'SELECT * FROM customer, product, deal WHERE customer.customerid=deal.customerid AND product.productid=deal.productid AND deal.quantity >"'.$quantity.'" ORDER BY deal.quantity DESC';
    $result=mysqli_query($connection,$query);
     if (!$result) {
          die("database query failed.");
