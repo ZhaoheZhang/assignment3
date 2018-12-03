@@ -36,6 +36,9 @@ include 'getdata.php';
 <?php
 include 'getdata.php';
 ?>
+<?php
+include 'getproductname.php';
+?>
 </form>
 <?php
 mysqli_close($connection);
