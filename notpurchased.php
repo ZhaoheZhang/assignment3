@@ -6,7 +6,7 @@
     }
    echo "Who are you looking up? </br>";
    while ($row = mysqli_fetch_assoc($result)) {
-        echo $row[];
+        echo $row["description"];
    }
    mysqli_free_result($result);
 ?>
