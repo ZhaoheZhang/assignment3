@@ -4,9 +4,8 @@
    if (!$result) {
         die("databases query failed.");
     }
-   echo "Who are you looking up? </br>";
    while ($row = mysqli_fetch_assoc($result)) {
-        echo $row["description"];
+        echo $row["description"] . "<br>";
    }
    mysqli_free_result($result);
 ?>

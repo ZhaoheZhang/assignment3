@@ -88,9 +88,13 @@ Show customer who has pruchased more than <input type="text" name="quantity"> (q
 <p>
 <hr>
 <p>
+<h2>Products Has Never Been Purchased</h2>
 <?php
 include "notpurchased.php";
 ?>
+<p>
+<hr>
+<p>
 <?php
 mysqli_close($connection);
 ?>
