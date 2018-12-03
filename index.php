@@ -45,6 +45,15 @@ Quantity:<br>
 <input type="text" name="quantity"><br>
 <input type="submit" value="Make Purchase">
 </form>
+<p>
+<hr>
+<p>
+<h2>Add New Customer</h2>
+<form action="addcustomer.php" method="post" enctype="multipart/form-data">
+First Name: <input type="text" name="firstname"><br>
+Last Name: <input type="text" name="lastname"><br>
+<input type="submit" value="Add New Customer">
+</form>
 <?php
 mysqli_close($connection);
 ?>
