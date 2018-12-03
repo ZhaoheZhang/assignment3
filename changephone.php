@@ -17,7 +17,7 @@
    if (!mysqli_query($connection, $query)) {
         die("Error: insert failed" . mysqli_error($connection));
     }
-   echo "Your pet was added!";
+   echo "Phone Number Changed!";
    mysqli_close($connection);
 ?>
 </ol>
