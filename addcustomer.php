@@ -26,7 +26,7 @@
    $row=mysqli_fetch_assoc($result);
    $newkey = intval($row["maxid"]) + 1;
    $customerid = (string)$newkey;
-   $query='INSERT INTO Customer VALUES("'.$customerid.'", "'.$firstname.'", "'.$lastname.'", "'.$city.'", "'.$phone.'", "'.$agent.'")';
+   $query='INSERT INTO customer VALUES("'.$customerid.'", "'.$firstname.'", "'.$lastname.'", "'.$city.'", "'.$phone.'", "'.$agent.'")';
    if (!mysqli_query($connection, $query)) {
         die("Error: insert failed" . mysqli_error($connection));
     }
