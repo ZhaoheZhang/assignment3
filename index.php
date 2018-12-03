@@ -40,6 +40,10 @@ include 'getdata.php';
 <?php
 include 'getproductname.php';
 ?>
+<p>
+Quantity:<br>
+<input type="text" name="quantity"><br>
+<input type="submit" name="Make Purchase">
 </form>
 <?php
 mysqli_close($connection);
