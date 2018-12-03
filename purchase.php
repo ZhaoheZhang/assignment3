@@ -15,7 +15,7 @@
    $whichcustomer= $_POST["customer"];
    $productid = $_POST["product"];
    $purchasequantity =$_POST["quantity"];
-   $query1 = "SELECT product.quantity FROM product WHERE product.id = '.$product.'";
+   $query1 = 'SELECT product.quantity FROM product WHERE product.id = '.$productid.'';
    $stock = mysqli_query($connection,$query1);
    if (!$stock) {
         die("databases query1 failed.");
