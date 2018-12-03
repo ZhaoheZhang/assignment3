@@ -11,22 +11,43 @@
 <h1>Purchase Result:</h1>
 <ol>
 <?php
-   $whichCustomer= $_POST["customer"];
+   $purchasedbefore = 0;
+   $whichcustomer= $_POST["customer"];
    $productid = $_POST["product"];
-   $quantity =$_POST["quantity"];
-   $query1= 'SELECT product.quantity FROM product WHERE product.productid="'.$productid.'"';
-   $result=mysqli_query($connection,$query1);
-   if (!$result) {
-          die("database max query failed.");
-   }
-   $row=mysqli_fetch_assoc($result);
-   $newkey = intval($row["maxid"]) + 1;
-   $petid = (string)$newkey;
-   $query = 'INSERT INTO pet values("' . $petid . '","' . $petName . '","' . $species . '","' . $whichOwner . '")';
-   if (!mysqli_query($connection, $query)) {
-        die("Error: insert failed" . mysqli_error($connection));
+   $purchasequantity =$_POST["quantity"];
+   $query1 = "SELECT product.quantity FROM product WHERE product.id = '.$product.'";
+   $stock = mysqli_query($connection,$query1);
+   if (!$stock) {
+        die("databases query failed.");
     }
-   echo "Your pet was added!";
+
+    if($purchasequantity > $stock) {
+      echo "Unable to purchase, item out of stock.";
+    }
+    else 
+    {
+      $query2 = "SELECT * FROM deal WHERE deal.customerid = '.$whichcustomer.'";
+      $result2 = mysqli_query($connection,$query2);
+      if (!$result2) {
+        die("databases query failed.");
+      }
+      while ($row = mysqli_fetch_assoc($result2)) 
+      {
+        if($row["productid"] == $productid) 
+        {
+          $purchasequantity = $purchasequantity + $row["quantity"];
+          $purchasedbefore = 1;
+        }
+      }
+    if($purchasedbefore == 0) 
+    {
+      $query3 = 'INSERT INTO deal VALUES('.$purchasequantity.', "'.$whichcustomer.'", "'.$productid.'")';
+    }
+    elseif($purchasedbefore == 1) 
+    {
+      $query3 = 'UPDATE deal SET quantity = '.$purchasequantity.' WHERE customerid = "'.$whichcustomer.'" AND productid = "'.$productid.'"';
+    }
+  }
    mysqli_close($connection);
 ?>
 </ol>
