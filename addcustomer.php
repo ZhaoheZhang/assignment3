@@ -18,7 +18,7 @@
    $city = $_POST["city"];
    $agent="99";
 
-   $query1= 'select max(customerid) as maxid from pet';
+   $query1= 'SELECT max(customerid) AS maxid FROM customer';
    $result=mysqli_query($connection,$query1);
    if (!$result) {
           die("database max query failed.");
