@@ -12,14 +12,14 @@ include 'connectdb.php';
 <ol>
 <?php
    $whichCustomer= $_POST["customer"];
-   $query = 'SELECT * FROM customer WHERE customer.customerid = "' . $whichCustomer . '"';
+   $query = 'SELECT * FROM customer, product, deal WHERE customer.customerid = deal.customerid AND product.productid = deal.productid AND customer.customerid = "' . $whichCustomer . '"';
    $result=mysqli_query($connection,$query);
     if (!$result) {
          die("database query2 failed.");
      }
     while ($row=mysqli_fetch_assoc($result)) {
         echo '<li>';
-        echo $row["firstname"] . " " . $row["lastname"];
+        echo $row["firstname"] . " " . $row["lastname"] . " " . $row["description"];
      }
      mysqli_free_result($result);
 ?>
