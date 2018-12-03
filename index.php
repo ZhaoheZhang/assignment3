@@ -59,9 +59,10 @@ City: <input type="text" name="city"><br>
 <p>
 <hr>
 <p>
+<h2>Change Customer Phone Number</h2>
 <form action="changephone.php" method="post">
 <?php
-include 'getdata.php';
+include 'getphone.php';
 ?>
 <input type="submit" value="Change Customer Phone Number">
 </form>
