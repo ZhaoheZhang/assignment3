@@ -6,25 +6,20 @@
 </head>
 <body>
 <?php
-include 'connectdb.php';
+   include 'connectdb.php';
 ?>
-<h1>Change Customer Phone Number:</h1>
+<h1>Changing Customer Phone Number</h1>
 <ol>
 <?php
-   $whichCustomer= $_POST["customer"];
-   $query = 'SELECT * FROM customer WHERE customer.customerid ="'.$whichCustomer.'"';
-   $result=mysqli_query($connection,$query);
-    if (!$result) {
-         die("database query failed.");
-     }
-    $row=mysqli_fetch_assoc($result);
-    echo 'Original Phone Number: <br>';
-    echo $row["firstname"] ." ". $row["lastname"] .": ". $row["phone"];
-    mysqli_free_result($result);
-?>
-</ol>
-<?php
+   $whichcustomer= $_POST["customer"];
+   $newphone = $_POST["newphone"];
+   $query = 'UPDATE customer SET customer.phone = "'.$newphone.'" WHERE customer.customerid = "'.$whichcustomer.'"';
+   if (!mysqli_query($connection, $query)) {
+        die("Error: insert failed" . mysqli_error($connection));
+    }
+   echo "Your pet was added!";
    mysqli_close($connection);
 ?>
+</ol>
 </body>
 </html>
