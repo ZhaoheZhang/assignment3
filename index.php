@@ -75,6 +75,7 @@ New Phone Number: <input type="text" name="newphone"><br>
 <?php
 include 'getdata.php';
 ?>
+<input type="submit" value="Delete Selected Customer">
 </form>
 <?php
 mysqli_close($connection);
