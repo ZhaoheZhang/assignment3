@@ -14,23 +14,23 @@
    $customerexist = 0;
    $firstname= $_POST["firstname"];
    $lastname = $_POST["lastname"];
-   $query1= 'SELECT * FROM customer';
-   $result1=mysqli_query($connection,$query1);
-   if (!$result1) {
+   $phone = $_POST["phone"];
+   $city = $_POST["city"];
+   $agent="99";
+
+   $query1= 'select max(customerid) as maxid from pet';
+   $result=mysqli_query($connection,$query1);
+   if (!$result) {
           die("database max query failed.");
    }
-   while ($row = mysqli_fetch_assoc($result1)) {
-    if($firstname == $row["firstname"] AND $lastname == $row["lastname"]) {
-      customerexist = 1;
+   $row=mysqli_fetch_assoc($result);
+   $newkey = intval($row["maxid"]) + 1;
+   $customerid = (string)$newkey;
+   $query='INSERT INTO Customer VALUES("'.$customerid.'", "'.$firstname.'", "'.$lastname.'", "'.$city.'", "'.$phone.'", "'.$agent.'")';
+   if (!mysqli_query($connection, $query)) {
+        die("Error: insert failed" . mysqli_error($connection));
     }
-  }
-  if(customerexist == 1) {
-  echo "Customer already exist";
-   mysqli_close($connection);
-  }
-  else {
-  
-}
+   echo "New customer was added!";
 ?>
 </ol>
 </body>

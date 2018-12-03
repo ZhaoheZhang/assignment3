@@ -52,6 +52,8 @@ Quantity:<br>
 <form action="addcustomer.php" method="post" enctype="multipart/form-data">
 First Name: <input type="text" name="firstname"><br>
 Last Name: <input type="text" name="lastname"><br>
+Phone: <input type="text" name="phone"><br>
+City: <input type="text" name="city"><br>
 <input type="submit" value="Add New Customer">
 </form>
 <?php
