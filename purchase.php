@@ -16,11 +16,11 @@
    $productid = $_POST["product"];
    $purchasequantity =$_POST["quantity"];
    $query1 = 'SELECT product.quantity FROM product WHERE product.productid = '.$productid.'';
-   $stock = mysqli_query($connection,$query1);
-   if (!$stock) {
+   $result1 = mysqli_query($connection,$query1);
+   if (!$result1) {
         die("databases query1 failed.");
     }
-
+    $stock = mysqli_fetch_assoc($result1);
     echo $stock;
 
     if($purchasequantity > $stock) {
