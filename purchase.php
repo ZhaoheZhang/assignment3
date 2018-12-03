@@ -12,9 +12,9 @@
 <ol>
 <?php
    $whichCustomer= $_POST["customer"];
-   $productname = $_POST["product"];
+   $productid = $_POST["product"];
    $quantity =$_POST["quantity"];
-   $query1= 'select max(petid) as maxid from pet';
+   $query1= 'SELECT product.quantity FROM product WHERE product.productid="'.$productid.'"';
    $result=mysqli_query($connection,$query1);
    if (!$result) {
           die("database max query failed.");
