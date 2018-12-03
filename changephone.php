@@ -18,7 +18,7 @@ include 'connectdb.php';
          die("database query failed.");
      }
     $row=mysqli_fetch_assoc($result);
-    echo '"Original Phone Number: "<br>';
+    echo 'Original Phone Number: <br>';
     echo $row["firstname"] ." ". $row["lastname"] .": ". $row["phone"];
     mysqli_free_result($result);
 ?>
