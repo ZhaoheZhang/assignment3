@@ -36,6 +36,7 @@ include 'getdata.php';
 <?php
 include 'getdata.php';
 ?>
+<p>
 <?php
 include 'getproductname.php';
 ?>
