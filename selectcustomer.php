@@ -2,20 +2,20 @@
 <html>
 <head>
 <meta charset="utf-8">
-<title>Transactions</title>
+<title>VIP</title>
 </head>
 <body>
 <?php
 include 'connectdb.php';
 ?>
-<h1>Here are the transactions:</h1>
+<h1>Valuable Customers:</h1>
 <ol>
 <?php
    $quantity= $_POST["quantity"];
-   $query = 'SELECT customer.customerid ="'.$quantity.'"';
+   $query = 'SELECT * FROM customer, product, deal WHERE customer.customerid=deal.customerid AND product.productid=deal.productid AND deal.quantity >"'.$quantity.'"';
    $result=mysqli_query($connection,$query);
     if (!$result) {
-         die("database query2 failed.");
+         die("database query failed.");
      }
     while ($row=mysqli_fetch_assoc($result)) {
         echo '<li>';
