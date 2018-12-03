@@ -85,6 +85,12 @@ include 'getdata.php';
 Show customer who has pruchased more than <input type="text" name="quantity"> (quantity) of any item<br>
 <input type="submit" value="View Customers">
 </form>
+<p>
+<hr>
+<p>
+<?php
+include "notpurchased.php";
+?>
 <?php
 mysqli_close($connection);
 ?>
