@@ -83,9 +83,6 @@ include 'getdata.php';
 <form action="selectcustomer.php" method="post" enctype="multipart/form-data">
 <h2>Valuable Customers</h2>
 Show customer who has pruchased more than <input type="text" name="quantity"> (quantity) of any item<br>
-<?php
-include 'selectcustomer.php';
-?>
 </form>
 <?php
 mysqli_close($connection);
