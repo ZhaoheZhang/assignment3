@@ -77,6 +77,12 @@ include 'getdata.php';
 ?>
 <input type="submit" value="Delete Selected Customer">
 </form>
+<p>
+<hr>
+<p>
+<form action="selectcustomer.php" method="post" enctype="multipart/form-data">
+<h2>Valuable Customers</h2>
+</form>
 <?php
 mysqli_close($connection);
 ?>
