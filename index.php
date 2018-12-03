@@ -32,7 +32,7 @@ include 'getdata.php';
 <hr>
 <p>
 <h2>Make a Purchase</h2>
-<form action="purchase.php" method="post">
+<form action="purchase.php" method="post" enctype="multipart/form-data">
 <?php
 include 'getdata.php';
 ?>
