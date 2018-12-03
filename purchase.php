@@ -21,7 +21,7 @@
         die("databases query1 failed.");
     }
 
-    echo $purchasequantity;
+    echo $stock;
 
     if($purchasequantity > $stock) {
       echo "Unable to purchase, item out of stock.";
