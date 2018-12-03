@@ -37,6 +37,7 @@ include 'getdata.php';
 include 'getdata.php';
 ?>
 </form>
+<?php
 mysqli_close($connection);
 ?>
 </body>

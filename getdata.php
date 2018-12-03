@@ -4,7 +4,7 @@
    if (!$result) {
         die("databases query failed.");
     }
-   echo "Who are you looking up? </br>";
+   echo "Choose the customer </br>";
    while ($row = mysqli_fetch_assoc($result)) {
         echo '<input type="radio" name="customer" value="';
         echo $row["customerid"];
