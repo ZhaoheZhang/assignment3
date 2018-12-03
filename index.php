@@ -9,6 +9,9 @@
 include 'connectdb.php';
 ?>
 <h1>Welcome to the Sales Information Database</h1>
+<p>
+<hr>
+<p>
 <h2>Customer Information</h2>
 <form action="gettransactions.php" method="post">
 <?php
@@ -25,7 +28,15 @@ include 'getdata.php';
 <input type="radio" name="order" value="descending">In Descending<br>
 <input type="submit" value="Get All Product Information">
 </form>
+<p>
+<hr>
+<p>
+<h2>Make a Purchase</h2>
+<form action="purchase.php" method="post">
 <?php
+include 'getdata.php';
+?>
+</form>
 mysqli_close($connection);
 ?>
 </body>
