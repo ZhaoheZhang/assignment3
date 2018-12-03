@@ -18,7 +18,6 @@ include 'connectdb.php';
          die("database query2 failed.");
      }
      echo "Customer deleted!";
-     mysqli_free_result($result);
 ?>
 </ol>
 <?php
