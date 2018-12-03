@@ -43,7 +43,7 @@ include 'getproductname.php';
 <p>
 Quantity:<br>
 <input type="text" name="quantity"><br>
-<input type="submit" name="Make Purchase">
+<input type="submit" value="Make Purchase">
 </form>
 <?php
 mysqli_close($connection);
