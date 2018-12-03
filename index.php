@@ -56,6 +56,15 @@ Phone: <input type="text" name="phone"><br>
 City: <input type="text" name="city"><br>
 <input type="submit" value="Add New Customer">
 </form>
+<p>
+<hr>
+<p>
+<form action="changephone.php" method="post">
+<?php
+include 'getdata.php';
+?>
+<input type="submit" value="Get Customer Transactions">
+</form>
 <?php
 mysqli_close($connection);
 ?>

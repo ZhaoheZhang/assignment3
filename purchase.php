@@ -18,7 +18,7 @@
    $query1 = "SELECT product.quantity FROM product WHERE product.id = '.$product.'";
    $stock = mysqli_query($connection,$query1);
    if (!$stock) {
-        die("databases query failed.");
+        die("databases query1 failed.");
     }
 
     if($purchasequantity > $stock) {
@@ -29,7 +29,7 @@
       $query2 = "SELECT * FROM deal WHERE deal.customerid = '.$whichcustomer.'";
       $result2 = mysqli_query($connection,$query2);
       if (!$result2) {
-        die("databases query failed.");
+        die("databases query2 failed.");
       }
       while ($row = mysqli_fetch_assoc($result2)) 
       {
