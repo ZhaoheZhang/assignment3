@@ -71,6 +71,7 @@ New Phone Number: <input type="text" name="newphone"><br>
 <hr>
 <p>
 <form action="deletecustomer.php" method="post" enctype="multipart/form-data">
+<h2>Delete A Customer</h2>
 <?php
 include 'getdata.php';
 ?>
