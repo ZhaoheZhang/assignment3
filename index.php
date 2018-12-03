@@ -86,7 +86,6 @@ Show customer who has pruchased more than <input type="text" name="quantity"> (q
 <?php
 include 'selectcustomer.php';
 ?>
-<input type="submit" name="View Customers">
 </form>
 <?php
 mysqli_close($connection);
