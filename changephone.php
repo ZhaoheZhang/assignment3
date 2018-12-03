@@ -15,10 +15,11 @@ include 'connectdb.php';
    $query = 'SELECT * FROM customer WHERE customer.customerid ="'.$whichCustomer.'"';
    $result=mysqli_query($connection,$query);
     if (!$result) {
-         die("database query2 failed.");
+         die("database query failed.");
      }
-    echo 
-     mysqli_free_result($result);
+    $row=mysqli_fetch_assoc($result);
+    echo $row["firstname"] ." ". $row["lastname"] .": ". $row["phone"];
+    mysqli_free_result($result);
 ?>
 </ol>
 <?php
