@@ -25,7 +25,7 @@ include 'connectdb.php';
      }
     while ($row=mysqli_fetch_assoc($result)) {
         echo '<li>';
-        echo $row["productid"] . " " . $row["description"] . " " . $row["cost"] . " " . $row["quantity"];
+        echo "ID: " . $row["productid"] . "   Name: " . $row["description"] . "   Price: " . $row["cost"] . "    Quantity: " . $row["quantity"];
      }
      mysqli_free_result($result);
 ?>
