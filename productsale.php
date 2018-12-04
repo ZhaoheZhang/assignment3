@@ -18,7 +18,7 @@ include 'connectdb.php';
          die("database query failed.");
      }
     $row=mysqli_fetch_assoc($result);
-    echo $row["totalNum"] . " " . $row["description"] . "have been sold, make " . $row["totalNum"]*$row["cost"] . " profit";
+    echo $row["totalNum"] . " " . $row["description"] . " have been sold, made " . $row["totalNum"]*$row["cost"] . " profit";
     mysqli_free_result($result);
 ?>
 </ol>
