@@ -14,7 +14,7 @@ include 'connectdb.php';
    $whichproduct= $_POST["product"];
    $totalMoney=0;
    $totalNum=0;
-   $query = 'SELECT * FROM product, deal WHERE product.productid = "'.$whichProduct.'"';
+   $query = 'SELECT * FROM product, deal WHERE product.productid = deal.productid AND product.productid = "'.$whichProduct.'"';
    $result=mysqli_query($connection,$query);
     if (!$result) {
          die("database query failed.");
