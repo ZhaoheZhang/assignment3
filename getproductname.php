@@ -1,5 +1,5 @@
 <?php
-   $query = "SELECT * FROM product ORDER BY description";
+   $query = 'SELECT * FROM product ORDER BY description';
    $result = mysqli_query($connection,$query);
    if (!$result) {
         die("databases query failed.");
