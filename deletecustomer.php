@@ -19,7 +19,7 @@ include 'connectdb.php';
      }
 
    $query1 = 'DELETE FROM customer WHERE customer.customerid ="'.$whichCustomer.'"';
-   $result1=mysqli_query($connection,$query);
+   $result1=mysqli_query($connection,$query1);
     if (!$result1) {
          die("database query1 failed.");
      }
