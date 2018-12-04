@@ -23,35 +23,12 @@
     $row1 = mysqli_fetch_assoc($result1);
     $stock = $row1["quantity"];
 
-    echo $purchasequantity;
-
     if($purchasequantity > $stock) {
       echo "Unable to purchase, item out of stock.";
     }
-    else 
-    {
-      $query2 = "SELECT * FROM deal WHERE deal.customerid = '.$whichcustomer.'";
-      $result2 = mysqli_query($connection,$query2);
-      if (!$result2) {
-        die("databases query2 failed.");
-      }
-      while ($row = mysqli_fetch_assoc($result2)) 
-      {
-        if($row["productid"] == $productid) 
-        {
-          $purchasequantity = $purchasequantity + $row["quantity"];
-          $purchasedbefore = 1;
-        }
-      }
-    if($purchasedbefore == 0) 
-    {
-      $query3 = 'INSERT INTO deal VALUES('.$purchasequantity.', "'.$whichcustomer.'", "'.$productid.'")';
+    else {
+      echo "Purchase Success";
     }
-    elseif($purchasedbefore == 1) 
-    {
-      $query3 = 'UPDATE deal SET quantity = '.$purchasequantity.' WHERE customerid = "'.$whichcustomer.'" AND productid = "'.$productid.'"';
-    }
-  }
    mysqli_close($connection);
 ?>
 </ol>
