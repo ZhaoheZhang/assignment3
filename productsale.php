@@ -12,6 +12,10 @@ include 'connectdb.php';
 <ol>
 <?php
    $whichproduct= $_POST["product"];
+
+
+   echo $whichproduct;
+
    $query = 'SELECT SUM(deal.quantity) AS totalNum, product.description, product.cost FROM deal, product WHERE product.productid=deal.productid AND product.productid = "'.$whichProduct.'" GROUP BY product.productid';
    $result=mysqli_query($connection,$query);
     if (!$result) {
