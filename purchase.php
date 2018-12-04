@@ -22,7 +22,8 @@
     }
     $row1 = mysqli_fetch_assoc($result1);
     $stock = $row1["quantity"];
-    echo $stock;
+
+    echo $ purchasequantity;
 
     if($purchasequantity > $stock) {
       echo "Unable to purchase, item out of stock.";
