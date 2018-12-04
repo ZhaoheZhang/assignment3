@@ -35,7 +35,7 @@
       while($row=mysqli_fetch_assoc($result2)) {
         if($row["customerid"] == $whichcustomer and $row["productid"] == $productid) {
           $purchasedbefore = 1;
-          $quantity = $quantity + row["quantity"];
+          $quantity = $quantity + intval(row["quantity"]);
         }
       }
       if($purchasedbefore == 0) {
@@ -47,6 +47,7 @@
       if(!mysqli_query($connection,$query3)) {
         die("Cannot insert".mysqli_error($connection));
       }
+      echo "Product successfully purchased!";
     }
    mysqli_free_result($result1);
    mysqli_free_result($result2);
