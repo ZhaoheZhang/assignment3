@@ -24,7 +24,7 @@ include 'connectdb.php';
         $totalMoney = $totalMoney + $amount;
         $totalNum = $totalNum + $row["quantity"];
      }
-     echo $totalNum . " " . $row["description"] . " sold, made " . $totalMoney . " profit." .
+     echo $row[description];
      mysqli_free_result($result);
 ?>
 </ol>
