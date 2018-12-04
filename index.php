@@ -70,8 +70,8 @@ New Phone Number: <input type="text" name="newphone"><br>
 <p>
 <hr>
 <p>
-<form action="deletecustomer.php" method="post" enctype="multipart/form-data">
 <h2>Delete A Customer</h2>
+<form action="deletecustomer.php" method="post" enctype="multipart/form-data">
 <?php
 include 'getdata.php';
 ?>
@@ -94,6 +94,14 @@ include "notpurchased.php";
 ?>
 <p>
 <hr>
+<p>
+<h2>View Product Sales Record</h2>
+<form action="productsale.php" method="post" enctype="multipart/form-data">
+<?php
+include 'getproductname.php';
+?>
+<input type="submit" value="View">
+</form>
 <p>
 <?php
 mysqli_close($connection);
