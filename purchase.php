@@ -35,7 +35,7 @@
       while($row=mysqli_fetch_assoc($result2)) {
         if($row["customerid"] == $whichcustomer and $row["productid"] == $productid) {
           $purchasedbefore = 1;
-          $quantity = $quantity + intval(row["quantity"]);
+          $quantity = $quantity + intval($row["quantity"]);
         }
       }
       if($purchasedbefore == 0) {
