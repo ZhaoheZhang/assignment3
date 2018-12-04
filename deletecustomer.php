@@ -12,10 +12,16 @@ include 'connectdb.php';
 <ol>
 <?php
    $whichCustomer= $_POST["customer"];
-   $query = 'DELETE FROM customer WHERE customer.customerid ="'.$whichCustomer.'"';
+   $query = 'DELETE FROM deal WHERE deal.customerid ="'.$whichCustomer.'"';
    $result=mysqli_query($connection,$query);
     if (!$result) {
-         die("database query2 failed.");
+         die("database query failed.");
+     }
+
+   $query1 = 'DELETE FROM customer WHERE customer.customerid ="'.$whichCustomer.'"';
+   $result1=mysqli_query($connection,$query);
+    if (!$result1) {
+         die("database query1 failed.");
      }
      echo "Customer deleted!";
 ?>
